@@ -1,4 +1,14 @@
-wget --mirror --convert-links --adjust-extension --page-requisites --no-parent --no-clobber https://www.w3schools.com/
+#!/bin/bash
+
+echo "\n***Do not use on Single Page Applications(SPA)***\n";
+
+echo "Website: "
+read website
+
+domain=$(echo $website | sed -nE 's!(http|https)://!!p' | sed -nE 's!/.*!!p')
+echo 'Domain:  '$domain'\n'
+
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent --no-clobber --domains $domain $website
 
 
 # --mirror – Makes (among other things) the download recursive.
@@ -13,4 +23,5 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -
 # --no-clobber: don't overwrite any existing files (used in case the download is interrupted and resumed).
 
 # wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains website.org --no-parent     www.website.org/tutorials/html/
- f71b7f8eac54f68a1b98139346c8db7a3a339bb8
+
+exit 0;

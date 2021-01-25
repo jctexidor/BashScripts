@@ -1,63 +1,40 @@
 #!/bin/bash
 
-sudo apt-add-repository --remove 'deb https://ubuntu.com/ubuntu bionic main restricted universe multiverse'
-sudo apt-add-repository --remove 'deb https://ubuntu.com/ubuntu bionic-security main restricted universe multiverse'
-sudo apt-add-repository --remove 'deb https://ubuntu.com/ubuntu bionic-updates main restricted universe multiverse'
-sudo apt-add-repository --remove 'deb https://ubuntu.com/ubuntu bionic-proposed main restricted universe multiverse'
-sudo apt-add-repository --remove 'deb https://ubuntu.com/ubuntu bionic-backports main restricted universe multiverse'
-
-sudo apt-add-repository --remove 'deb http://packages.linuxmint.com tricia main upstream import backport'
-sudo apt-add-repository --remove 'deb http://archive.ubuntu.com/ubuntu bionic main restricted universe multiverse'
-sudo apt-add-repository --remove 'deb http://archive.ubuntu.com/ubuntu bionic-updates main restricted universe multiverse'
-sudo apt-add-repository --remove 'deb http://archive.ubuntu.com/ubuntu bionic-backports main restricted universe multiverse'
-sudo apt-add-repository --remove 'deb http://security.ubuntu.com/ubuntu/ bionic-security main restricted universe multiverse'
-sudo apt-add-repository --remove 'deb http://archive.canonical.com/ubuntu/ bionic partner'
-
-sudo apt-add-repository 'deb http://ubuntu.uci.cu/ubuntu bionic main restricted universe multiverse'
-sudo apt-add-repository 'deb http://ubuntu.uci.cu/ubuntu bionic-security main restricted universe multiverse'
-sudo apt-add-repository 'deb http://ubuntu.uci.cu/ubuntu bionic-updates main restricted universe multiverse'
-sudo apt-add-repository 'deb http://ubuntu.uci.cu/ubuntu bionic-proposed main restricted universe multiverse'
-sudo apt-add-repository 'deb http://ubuntu.uci.cu/ubuntu bionic-backports main restricted universe multiverse'
-
-
 sudo apt-get update;
 
 
 # Utilidades
 
-sudo apt-get install --yes materia-gtk-theme breeze;
-sudo apt-get install --yes '^(papirus|deepin)-icon-theme$';
-sudo apt-get install --yes variety synergy tilda onboard qterminal redshift cheese;
-sudo apt-get install --yes xscreensaver-gl;
-
+sudo apt-get install --yes materia-gtk-theme breeze '^(papirus|deepin)-icon-theme$';
+sudo apt-get install --yes variety tilda onboard qterminal redshift cheese meld xpad flameshot;
+sudo apt-get install --yes '^xscreensaver(-gl(-extra)?)?$';
+sudo apt-get install --yes '^p7zip(-full|-rar)?$';
 
 # Gestores de archivos
 
 sudo apt-get install --yes mc;
 sudo apt-get install --yes calibre;
 sudo apt-get install --yes shotwell;
+# sudo apt-get install --yes '^caja(-actions|-extension-fma|-image-converter|-owncloud|-share|-xattr-tags)?$';
 
 
 
 # Administración
 
-sudo apt-get install --yes gdebi;
-sudo apt-get install --yes synaptic;
-sudo apt-get install --yes gparted;
+sudo apt-get install --yes gdebi synaptic;
+sudo apt-get install --yes gparted usb-creator-gtk gnome-disks;
 sudo apt-get install --yes virtualbox;
-sudo apt-get install --yes wine-stable;
+sudo apt-get install --yes wine-stable mono-complete winetricks;
 
 
 
 # Internet
 
-sudo apt-get install --yes wget;
+sudo apt-get install --yes wget curl;
 sudo apt-get install --yes wireshark;
 sudo apt-get install --yes filezilla;
 sudo apt-get install --yes '^pidgin(-audacious)?$';
 sudo apt-get install --yes '^firefox(-locale-(es|en))?$'; # gecko
-sudo apt-get install --yes '^chromium-browser(-l10n)?$'; # webkit
-sudo apt-get install --yes '^thunderbird(-locale-(es|en))?$';
 
 
 
@@ -83,7 +60,7 @@ sudo systemctl disable apache2;
 
 sudo apt-get install --yes '^sqlite3?(-doc)?$' sqlitebrowser;
 sudo apt-get install --yes '^mysql-(server|client|utilities|workbench)$';
-sudo apt-get install --yes '^postgresql(-doc|-client)?(-10)?$' pgadmin3 postgresql-10-plproxy;
+sudo apt-get install --yes '^postgresql(-doc|-client)?$' pgadmin3;
 sudo systemctl disable mysql;
 
 
@@ -93,23 +70,16 @@ sudo apt-get install --yes '^weka(-doc)?$';
 sudo apt-get install --yes '^swi-prolog(-doc)?$';
 
 
-# IDE's
-
-sudo apt-get install --yes qtcreator;
-sudo apt-get install --yes '^geany(-plugins-(addons|lipsum|overview|pairtaghighlighter|spellcheck|treebrowser))?$';
-
-
 # Control de Versiones
 
 sudo apt-get install --yes git;
-sudo apt-get install --yes subversion;
 
 
 # TEXTO
 
-sudo apt-get install --yes '^kile(-doc|-l10n)?$'; # Latex
 sudo apt-get install --yes '^okular(-extra-backends)?$';
-sudo apt-get install --yes '^texstudio(-doc)?$' texlive-full; # Latex
+sudo apt-get install --yes '^texstudio(-doc)?$' texlive; # Latex
+sudo apt-get install --yes '^geany(-plugins-(addons|lipsum|overview|pairtaghighlighter|spellcheck|treebrowser))?$';
 sudo apt-get install --yes pandoc;
 
 
@@ -143,7 +113,7 @@ sudo apt-get install --yes dia;
 sudo apt-get install --yes gimp;
 sudo apt-get install --yes blender;
 sudo apt-get install --yes pencil2d;
-sudo apt-get install --yes '^inkscape(-open-symbols)?$' sozi;
+sudo apt-get install --yes '^inkscape(-open-symbols)?$';
 
 
 # AUDIO
@@ -167,7 +137,7 @@ sudo apt-get install --yes '^ffmpeg(-doc)?$';
 # --yes
 
 
-sudo apt-get upgrade --yes && sudo apt-get autoremove;
+sudo apt-get upgrade --yes && sudo apt-get autoremove --yes;
 
 
 exit 0;
