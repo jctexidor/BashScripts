@@ -34,7 +34,6 @@ sudo sed -i '/^export ftp_proxy.*$/d' ~/.bashrc /etc/bash.bashrc
 sudo sed -i '/^export all_proxy.*$/d' ~/.bashrc /etc/bash.bashrc
 sudo sed -i '/^export no_proxy.*$/d' ~/.bashrc /etc/bash.bashrc
 
-
 var='
 \nunset http_proxy https_proxy ftp_proxy no_proxy;
 \nexport http_proxy=http://127.0.0.1:3128; # http://user:password@10.0.0.1:8080
@@ -49,6 +48,6 @@ echo $var | sudo bash
 
 echo $var | tee -a ~/.bashrc | sudo tee -a /etc/bash.bashrc | grep 'XxXxXxXxXx'
 
-sudo systemctl restart cntlm;
+sudo systemctl restart cntlm
 
-exit 0;
+exit 0

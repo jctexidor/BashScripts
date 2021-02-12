@@ -1,7 +1,6 @@
 #!/bin/sh
 
-
-redshift -m randr -l 23.135305:-82.3589631 -t 6500K:3500K;
+redshift -m randr -l 23.135305:-82.3589631 -t 6500K:3500K
 
 # Havana:
 #   Latitude:    23.135305
@@ -18,9 +17,7 @@ redshift -m randr -l 23.135305:-82.3589631 -t 6500K:3500K;
 # Daytime temperature: 5500K
 # Night temperature: 3500K
 
-
 # redshift -x
 # redshift -O 2500K
 
-
-exit 0;
+exit 0
