@@ -1,0 +1,8 @@
+# It's posssible combine technologies
+
+npm install @angular/cli       # Install the Angular command line interface.
+ng new --defaults «helloWorld» # Create new Angular project.
+cd «helloWorld» && npm install # Install dependencies of package.json.
+ng add ng-zorro-antd           # Add NG-ZORRO.
+
+npx cross-env ELECTRON_GET_USE_PROXY=true GLOBAL_AGENT_HTTPS_PROXY=http://localhost:3128 npm install electron --unsafe-perm=true # Add Electron
