@@ -1,6 +1,6 @@
 #!/bin/sh
 
-redshift -m randr -l 23.135305:-82.3589631 -t 6500K:3500K
+redshift -m randr -l 23.135305:-82.3589631 -t 6500K:4500K
 
 # Havana:
 #   Latitude:    23.135305
